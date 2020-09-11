@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: SWP Sagw Accounting
+Plugin Name: SWP Sage Accounting
 Plugin URI: http://www.smartwebpros.com/
 Version: 1.0
 Author: SmartWebPros.com Inc.
