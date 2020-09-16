@@ -19,7 +19,7 @@
 
 	<div class="ssa-wrapper">
 
-		<aside class="ssa-menu sidebar">
+		<aside id="sidebar" class="ssa-menu sidebar">
 
 			<div class="sidebar-logo-box">
 				<figure>
@@ -33,7 +33,8 @@
 
 			<nav class="sidebar-nav">
 				<div class="menubox">
-					<a href="#">Invoices<i class="open-submenu icon">open</i></a>
+					<a href="#">Invoices</a>
+					<i class="open-submenu icon">open</i>
 					<div class="submenu">
 						<a href="#">Lorem ipsum dolor sit amet</a>
 						<a href="#">Lorem ipsum dolor</a>
@@ -42,7 +43,8 @@
 					</div>
 				</div>
 				<div class="menubox">
-					<a href="#">Account<i class="open-submenu icon">open</i></a>
+					<a href="#">Account</a>
+					<i class="open-submenu icon">open</i>
 					<div class="submenu">
 						<a href="#">Lorem ipsum dolor sit amet</a>
 						<a href="#">Lorem ipsum dolor</a>
@@ -60,7 +62,7 @@
 
 				<div class="main-nav-left">
 
-					<div class="hamburger-menu">
+					<div id="toggle-sidebar" class="hamburger-menu">
 
 						<svg width="52" height="35" viewBox="0 0 52 35" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<rect x="1" y="1" width="50" height="7" rx="3.5" stroke="white" stroke-width="2" stroke-linejoin="round"/>
@@ -111,6 +113,30 @@
 		</div>
 
 	</div>
+	<script type="text/javascript">
+		// variables
+		const hamburger = document.getElementById('toggle-sidebar'),
+					sidebar = document.getElementById('sidebar'),
+					submenu = document.getElementsByClassName('open-submenu');
+
+		// change the class of the sidebar on click
+		hamburger.addEventListener( 'click', () => {
+			sidebar.classList.toggle('toggled');
+		});
+
+		// loop through the elements and add an on click even
+		for (let i = 0; i < submenu.length; i++) {
+			// change the class of submenu on click
+			submenu[i].addEventListener( 'click', (event) => {
+				// get the clicked element
+				let submenuElement = event.target || event.srcElement;
+				// toggle class on the next element
+				submenuElement.classList.toggle('spin');
+				submenuElement.nextElementSibling.classList.toggle('open');
+			});
+
+		}
+	</script>
 
 </body>
 
