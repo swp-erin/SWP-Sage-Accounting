@@ -14,7 +14,8 @@ define('SSA_PLUGIN_FILE', __FILE__);
 
 // add necessary plugin files
 
-//require_once(plugin_dir_path( __FILE__ ) . 'includes/functions.php');
+require_once(plugin_dir_path( __FILE__ ) . 'includes/functions.php');
+require_once(plugin_dir_path( __FILE__ ) . 'includes/display-functions.php');
 
 
 function ssa_init() {
