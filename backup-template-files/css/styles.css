@@ -11,6 +11,7 @@
 	--font-style-normal: normal;
 	--font-weight-normal: normal;
 	--font-weight-bold: bold;
+	--font-weight-oblique: oblique;
 	--font-size-14: 14px;
 	--font-size-18: 18px;
 	--font-size-24: 24px;
@@ -35,14 +36,19 @@ body {
 }
 
 /* Character Styles */
-p {
-font-family: var(--font-family-arial);
-font-style: var(--font-style-normal);
-font-weight: var(--font-weight-normal);
-font-size: var(--font-size-14);
-line-height: var(--line-spacing-20);
-letter-spacing: var(--character-spacing-0);
-color: var(--black);
+p {font-family: var(--font-family-arial);font-style: var(--font-style-normal);font-weight: .75rem 1rem;font-size: var(--font-size-14);line-height: var(--line-spacing-20);letter-spacing: var(--character-spacing-0);color: var(--black);}
+
+
+.bold-text {
+    font-weight: var(--font-weight-bold);
+}
+
+.small-text  {
+    font-size: 0.8rem;
+}
+
+.itallic-text {
+    font-style: var(--font-weight-oblique);
 }
 
 h1,h2,h3,h4{
@@ -105,6 +111,27 @@ aside.ssa-menu.sidebar {
 aside.ssa-menu.sidebar.toggled {
 	margin-left: 0;
 }
+
+.sidebar-user {
+    padding: 1.75rem 1rem .75px;
+    text-align: center;
+}
+
+.sidebar-user img.user-image-circle {
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+}
+
+.sidebar-user p.user-full-name {
+    margin-bottom:.05rem;
+    color: var(--bark-blue);
+}
+
+.sidebar-user p.user-company {
+    margin: 0;
+}
+
 nav.sidebar-nav {
     padding: .75rem 1rem;
 }
