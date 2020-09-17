@@ -47,23 +47,27 @@
 
 			<nav class="sidebar-nav">
 				<div class="menubox">
-					<a href="#">Invoices</a>
-					<i class="open-submenu icon">open</i>
+					<a class="submenu-open">Invoices</a>
 					<div class="submenu">
-						<a href="#">Lorem ipsum dolor sit amet</a>
-						<a href="#">Lorem ipsum dolor</a>
-						<a href="#">Lorem ipsum dolor sit amet</a>
-						<a href="#">Lorem ipsum dolor</a>
+						<a href="#">All Invoices</a>
+						<a href="#">Single Invoice</a>
 					</div>
 				</div>
 				<div class="menubox">
-					<a href="#">Account</a>
-					<i class="open-submenu icon">open</i>
+					<a class="submenu-open">Account</a>
 					<div class="submenu">
-						<a href="#">Lorem ipsum dolor sit amet</a>
-						<a href="#">Lorem ipsum dolor</a>
-						<a href="#">Lorem ipsum dolor sit amet</a>
-						<a href="#">Lorem ipsum dolor</a>
+						<a href="#">My Account</a>
+						<a href="#">Change Password</a>
+						<a href="#">Log In</a>
+						<a href="#">Log Out</a>
+					</div>
+				</div>
+				<div class="menubox">
+					<a class="submenu-open">User Interface</a>
+					<div class="submenu">
+						<a href="#">Buttons</a>
+						<a href="#">Alerts</a>
+						<a href="#">Typography</a>
 					</div>
 				</div>
 			</nav>
@@ -131,7 +135,7 @@
 		// variables
 		const hamburger = document.getElementById('toggle-sidebar'),
 					sidebar = document.getElementById('sidebar'),
-					submenu = document.getElementsByClassName('open-submenu');
+					submenu = document.getElementsByClassName('submenu-open');
 
 		// change the class of the sidebar on click
 		hamburger.addEventListener( 'click', () => {

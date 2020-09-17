@@ -33,6 +33,7 @@ body {
 	font-weight: normal;
 	line-height: 1.5;
 	color: #000;
+	overflow-x: hidden;
 }
 
 /* Character Styles */
@@ -160,9 +161,16 @@ aside.sidebar  a{
 	display: block;
 	position: relative;
 	letter-spacing: 0px;
-	color:  var(--dark-blue);
+	color: #000;
 	text-decoration:none;
-	z-index: 9;
+	cursor: pointer;
+	border-radius: .2rem;
+	color: rgb(19 41 61 / 85%);
+}
+
+aside.sidebar  a:hover{
+    background:#f8f8f8;
+	color: var(--dark-blue);
 }
 
 aside.sidebar div:not(.submenu) > a{
@@ -170,6 +178,11 @@ aside.sidebar div:not(.submenu) > a{
 	color:  var(--dark-blue);
 	border-bottom: 1px solid  var(--dark-blue);
 	padding: 1rem 0rem;
+	border-radius: 0;
+}
+aside.sidebar div:not(.submenu) > a:hover{
+	background: transparent;
+	color: rgb(19 41 61 / 85%);
 }
 
 aside.sidebar .submenu {
@@ -193,15 +206,15 @@ aside.sidebar i.open-submenu.icon {
 	font-size: 1px;
 }
 
-aside.sidebar i.open-submenu.icon.spin:after{
+aside.sidebar .spin.submenu-open:after{
 	transform: rotate(45deg) translate(-8.5px, 0px);
 }
-aside.sidebar i.open-submenu.icon.spin:before{
+aside.sidebar .spin.submenu-open:before{
 	transform: rotate(45deg);
 }
 
-aside.sidebar i.open-submenu.icon:before,
-aside.sidebar i.open-submenu.icon:after{
+aside.sidebar .submenu-open:before,
+aside.sidebar .submenu-open:after{
 	content: '';
 	background: var(--dark-blue);
 	position:absolute;
@@ -210,12 +223,12 @@ aside.sidebar i.open-submenu.icon:after{
 	transition: all .35s ease;
 }
 
-aside.sidebar i.open-submenu.icon:before{
+aside.sidebar .submenu-open:before{
 	width: 14px;
 	height:2px;
 }
 
-aside.sidebar i.open-submenu.icon:after{
+aside.sidebar .submenu-open:after{
 	height: 14px;
 	width:2px;
 	transform: translate(-6px, -6px);
@@ -267,7 +280,7 @@ footer {}
 .ssa-main-content {
 	width: 100vw;
 	min-width: 100vw;
-	overflow-y:hidden;
+	overflow-x: hidden;
 }
 
 main.main-content {
