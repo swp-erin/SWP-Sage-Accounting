@@ -125,18 +125,113 @@
 					<h1>Invoices</h1>
 				</header>
 
-				<section class="content-card">
-					<h2>Lorem ipsum dolor sit amet</h2>
+				<section class="content-card signle-invoice-card">
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at sollicitudin eros. Praesent nunc est, rutrum sollicitudin aliquam quis, pellentesque sit amet mi. Pellentesque laoreet sapien a finibus sodales. Sed sollicitudin et justo at lobortis. Vivamus nec scelerisque felis. Vivamus a tellus pretium, mattis dui sit amet, finibus odio. Nulla porta commodo turpis, a pulvinar felis. Cras sagittis augue porta ex rhoncus, in aliquam magna auctor.</p>
+					<div class="single-invoice-header">
+						<p>Hello <span class="bold-text">Nancy Streeter</span>,<br/>
+						This is the invoice dated for April 26<sup>th</sup>, 2020, for the amount of <span class="bold-text">$66.69</span>(CAD).</p>
+					</div>
 
-					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nec purus ex. Suspendisse interdum consequat est, luctus ussarices sapien pretium in. Nam ac augue eget ligula fringilla consequat. Aenean varius felis sed sem tristique tincidunt non sit amet lectus. Fusce tincidunt semper nulla, quis aliquam velit. Nulla vel nunc fermentum, mollis erat ac, accumsan risus. Sed gravida sem lacus, in pulvinar lacus porta sed.</p>
+					<div class="menu-divider"></div>
 
-					<p>Integer vulputate scelerisque pretium. Duis diam erat, semper lacinia tellus a, tincidunt elementum tortor. Fusce sed risus augue. Nullam in mi urna. Aenean ac tortor blandit, imperdiet nulla id, euismod libero. Mauris et ipsum mauris. Nunc convallis eleifend sagittis. Nunc finibus mauris ipsum, sollicitudin elementum sapien rhoncus a. Suspendisse venenatis elit a maximus tempor. Mauris id vehicula odio. Donec eget libero nec sem lobortis hendrerit. Suspendisse non nisl consectetur est viverra molestie. Nunc sodales luctus nisl, eu tincidunt ligula posuere a.</p>
+					<div class="single-invoice-payment-info flex-row">
 
-					<p>Nulla a libero et ligula scelerisque dignissim eu in odio. Aliquam sed lectus ac quam pellentesque convallis sed ut massa. In blandit, ex ut lacinia viverra, orci eros placerat risus, vel lobortis nisl nisi at lacus. Mauris facilisis tortor ut metus scelerisque, et dapibus tellus congue. Aliquam erat volutpat. Duis viverra vitae ante eu iaculis. Nulla vestibulum aliquet turpis eu pharetra.</p>
+						<div class="payment-number col-span-2">
+							<p>Invoice No.<br/>
+								<span class="bold-text">543566645634</span></p>
+						</div>
 
-					<p>Mauris id dolor a nulla rutrum auctor id vel libero. Aliquam erat volutpat. Pellentesque tincidunt diam at luctus aliquet. Pellentesque auctor mauris nibh, ac gravida tortor tristique id. Vestibulum blandit, nisi eget porttitor semper, quam leo rhoncus risus, ac luctus ante ante vitae arcu. Aliquam non metus at elit dapibus consectetur. Vivamus ut turpis a mi tincidunt dapibus a in orci. Cras blandit dignissim ullamcorper. Donec neque quam, interdum ut nibh at, aliquam viverra urna. Sed quis sapien a ex tincidunt auctor. Cras sodales magna non massa facilisis fringilla. Mauris sed lorem diam. Aliquam id laoreet odio. Ut auctor euismod sem, et molestie elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec in rutrum lorem, at ussarices justo.</p>
+						<div class="payment-date desktop-text-right col-span-2">
+							<p>Payment Date<br/>
+								<span class="bold-text">April 26<sup>th</sup>, 2020</span></p>
+						</div>
+
+					</div>
+
+					<div class="menu-divider"></div>
+
+					<div class="single-invoice-contact-info flex-row">
+
+						<div class="client-information col-span-2">
+							<p>Client<br/>
+							<span class="bold-text">Odyssey Records & Tapes</span><br/>
+							1628 Hyde Park Road<br/>
+							London<br/>
+							N6H 3S2<br/>
+							Canada<br/>
+							519-657-5454<br/>
+							<a href="emailto:billing@odysseyrecords.ca">billing@odysseyrecords.ca</a>
+							</p>
+						</div>
+
+						<div class="payto-information desktop-text-right col-span-2">
+							<p>Payment To<br/>
+							<span class="bold-text">SmartWebPros.com Inc&#8482;</span><br/>
+							240 Waterloo St, Unit 105<br/>
+							London<br/>
+							N6B 2N4<br/>
+							Canada<br/>
+							519-660-7460<br/>
+							<a href="emailto:billing@smartwebpros.com">billing@smartwebpros.com</a>
+							</p>
+						</div>
+
+					</div>
+
+					<div class="single-invoice-work table">
+
+						<div class="row table-head bold-text">
+							<p class="col">Description</p>
+							<p class="col">Quantity</p>
+							<p class="col">Amount</p>
+						</div>
+
+						<div class="row work-desc">
+							<p class="col" data-title="Description">Little bit of this</p>
+							<p class="col" data-title="Quantity">2</p>
+							<p class="col" data-title="Amount">$22.00</p>
+						</div>
+
+						<div class="row work-desc">
+							<p class="col" data-title="Description">Little bit of that</p>
+							<p class="col" data-title="Quantity">3</p>
+							<p class="col" data-title="Amount">$44.00</p>
+						</div>
+
+						<div class="row bold-text">
+							<p class="col"></p>
+							<p class="col">Subtotal</p>
+							<p class="col">$66.00</p>
+						</div>
+
+						<div class="row bold-text">
+							<p class="col"></p>
+							<p class="col">Tax</p>
+							<p class="col">$6.69</p>
+						</div>
+
+						<div class="row bold-text">
+							<p class="col"></p>
+							<p class="col">Discount</p>
+							<p class="col">15%</p>
+						</div>
+
+						<div class="row bold-text">
+							<p class="col"></p>
+							<p class="col">Total</p>
+							<p class="col">$66.69</p>
+						</div>
+
+					</div>
+
+					<div class="menu-divider"></div>
+
+					<div class="single-invoice-footer center-text">
+						<p class="small-text"><span class="bold-text">Extra Notes:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at sollicitudin eros. Praesent nunc est, rutrum sollicitudin aliquam quis, pellentesque sit amet mi.</p>
+						<a href="#" class="btn btn-primary">Print Invoice</a>
+						<a href="#" class="btn btn-secondary">Pay Invoice</a>
+					</div>
+
 				</section>
 
 			</main>
