@@ -23,7 +23,7 @@
 
 *,*:after,*:before {-moz-box-sizing: border-box;box-sizing: border-box;-webkit-font-smoothing: antialiased;font-smoothing: antialiased;text-rendering: optimizeLegibility;}
 html {
-    background: linear-gradient(to bottom, var(--dark-blue) 0vh,var(--dark-blue) 30vh,var(--white) 30vh,var(--white) 100vh);
+    background: linear-gradient(to bottom, var(--dark-blue) 0vh,var(--dark-blue) 300px,#fcfcfc 300px,#f6f6f6 100vh);
     background-repeat: no-repeat;
 }
 body {
@@ -118,19 +118,35 @@ aside.sidebar {
     background: var(--white);
 }
 
-aside.sidebar a{
+aside.sidebar .menubox {
+    position: relative;
+}
+
+aside.sidebar  a{
 	display: block;
 	position: relative;
-	font-weight: var(--font-weight-bold);
 	letter-spacing: 0px;
 	color:  var(--dark-blue);
 	text-decoration:none;
-	border-bottom: 1px solid  var(--dark-blue);
-	padding: 1rem 0rem;
 	z-index: 9;
 }
 
-aside.sidebar a i.open-submenu.icon {
+aside.sidebar div:not(.submenu) > a{
+	font-weight: var(--font-weight-bold);
+	color:  var(--dark-blue);
+	border-bottom: 1px solid  var(--dark-blue);
+	padding: 1rem 0rem;
+}
+
+aside.sidebar .submenu {
+    padding-top: .5rem;
+}
+
+aside.sidebar .submenu a{
+	padding: .8rem 1rem;
+}
+
+aside.sidebar i.open-submenu.icon {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -138,23 +154,34 @@ aside.sidebar a i.open-submenu.icon {
 	color: transparent;
 	cursor: default;
 	z-index: 10;
+	min-width: 40px;
+	min-height: 55px;
+	font-size: 1px;
 }
 
-aside.sidebar a i.open-submenu.icon:before,
-aside.sidebar a i.open-submenu.icon:after{
+aside.sidebar i.open-submenu.icon.spin:after{
+	transform: rotate(45deg) translate(-8.5px, 0px);
+}
+aside.sidebar i.open-submenu.icon.spin:before{
+	transform: rotate(45deg);
+}
+
+aside.sidebar i.open-submenu.icon:before,
+aside.sidebar i.open-submenu.icon:after{
 	content: '';
 	background: var(--dark-blue);
 	position:absolute;
 	right: 0%;
 	top:50%;
+	transition: all .35s ease;
 }
 
-aside.sidebar a i.open-submenu.icon:before{
+aside.sidebar i.open-submenu.icon:before{
 	width: 14px;
 	height:2px;
 }
 
-aside.sidebar a i.open-submenu.icon:after{
+aside.sidebar i.open-submenu.icon:after{
 	height: 14px;
 	width:2px;
 	transform: translate(-6px, -6px);
@@ -162,7 +189,12 @@ aside.sidebar a i.open-submenu.icon:after{
 
 aside.sidebar .submenu {
     max-height: 0;
+    transition: all .35s ease;
     overflow: hidden;
+}
+
+aside.sidebar .submenu.open {
+	max-height:500px;
 }
 
 .content-card {
@@ -207,8 +239,8 @@ footer {}
 main.main-content {
     padding: .5rem 1.25rem;
     position: relative;
-    max-width: 1600px;
-    width: 100%;
+    max-width: 1550px;
+    width: 99%;
     margin: 0 auto;
 }
 
@@ -286,5 +318,8 @@ nav.main-nav {
 	}
 	.ssa-main-content {
 		min-width: auto;
+	}
+	main.main-content {
+		width: 95%
 	}
 }
