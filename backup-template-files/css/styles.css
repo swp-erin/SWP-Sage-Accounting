@@ -53,7 +53,7 @@ a {
     display: inline-block;
     color: var(--white);
     text-align: center;
-	transition: var(--transition);
+    transition: var(--transition);
     letter-spacing: 0.56px;
     border-radius: 50px;
     background: var(--light-blue);
@@ -61,6 +61,7 @@ a {
     font-size: var(--font-size-14);
     padding: .5rem 2rem;
     margin: 0.1rem 0.3rem;
+    cursor: pointer;
 }
 .btn.sm-btn {
 	padding: .3rem 1rem;
@@ -79,7 +80,17 @@ a {
 .btn.btn-secondary:hover {
 	color: var(--dark-blue);
 }
+.btn.white-btn {
+    background: transparent;
+    border: none;
+    color: #aaa;
+}
 
+.btn.white-btn:hover {
+    background:#e4e4e4;
+    color:#222;
+    opacity: 1
+}
 p {
 font-family: var(--font-family-arial);
 font-style: var(--font-style-normal);
@@ -210,7 +221,7 @@ aside.ssa-menu.sidebar.toggled {
     text-align: center;
 }
 
-.sidebar-user img.user-image-circle {
+.user-image-circle {
     border-radius: 50%;
     height: 75px;
     width: 75px;
@@ -515,12 +526,210 @@ nav.main-nav {
 .all-invoices.table .row:last-child {
     border-bottom: 1px solid #c1c6ca;
 }
+
+/* Chat Icon */
+.support-chat {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: .5rem 1.5rem 0.8rem 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 420px;
+    width: 100%;
+}
+
+.support-chat-message {
+    width: 100%;
+    padding: 1.4rem  0 0;
+    max-width: 382px;
+    cursor: pointer;
+}
+
+.support-chat-message.hide{
+	display: none;
+}
+
+.support-chat-message-text {
+    width: calc(100% - 75px);
+    padding-left: 1rem;
+}
+
+.support-chat-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--dark-blue);
+    padding: 19px 0;
+    border-radius:50%;
+    box-shadow: var(--box-shadow);
+    text-align:center;
+    cursor: pointer;
+    position: relative;
+}
+
+.support-chat-icon.exit .message-image-circle{
+    display:none;
+}
+
+.support-chat-icon.exit:before,
+.support-chat-icon.exit:after{
+	content: '';
+	background: var(--dark-blue);
+	position:absolute;
+	right: 15px;
+	top:50%;
+	transition: var(--transition);
+}
+.support-chat-icon.exit:before,
+.support-chat-icon.exit:after{
+	background: var(--white);
+}
+
+.support-chat-icon.exit:before{
+	width: 30px;
+	height:2px;
+	transform: rotate(45deg);
+}
+
+.support-chat-icon.exit:after{
+	height: 30px;
+	width:2px;
+	transform: rotate(45deg) translate(-20px, 0px);
+}
+
+
+.support-chat-message .content-card {
+    padding: 0.85rem 0.8rem;
+    position:relative;
+}
+
+.support-chat-message .content-card:before{
+	content: '';
+	position: absolute;
+	display: block;
+	bottom:-7px;
+	right: 22.5px;
+	width: 15px;
+	height: 15px;
+	background: var(--white);
+    transform: rotate(45deg);
+    box-shadow: var(--box-shadow);
+}
+
+.support-chat-message:hover ~ .close-support-message {
+    opacity: 1;
+}
+
+.support-chat-message.hide ~ .close-support-message {
+	display: none
+}
+
+.support-chat .close-support-message {
+    position: absolute;
+    right: 1.5rem;
+    top: 0;
+    margin-bottom: -0.5rem;
+    padding: 0.3rem 01rem;
+    font-size: 0.785rem;
+    letter-spacing: 0;
+    opacity:0;
+}
+
+.support-form{
+    width:100%;
+    display: none;
+}
+
+.support-form.show {
+	display: block;
+}
+
+.support-form .content-card {
+    position: relative;
+    padding-top: calc(2rem + 65px);
+}
+
+.support-form .content-card h4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 1rem 2rem;
+    background: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* Chat Animaltions */
+.support-chat-icon {
+  -webkit-animation: show-bubble .5s backwards;
+  -moz-animation:    show-bubble .5s backwards;
+  -o-animation:      show-bubble .5s backwards;
+  animation:         show-bubble .5s backwards;
+  animation-delay: .8s;
+
+}
+
+.support-chat-message{
+  -webkit-animation: show-bubble .5s backwards;
+  -moz-animation:    show-bubble .5s backwards;
+  -o-animation:      show-bubble .5s backwards;
+  animation:         show-bubble .5s backwards;
+  animation-delay: 1.2s;
+
+}
+
+@-webkit-keyframes show-bubble {
+  0%   {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-moz-keyframes show-bubble {
+  0%   {
+    opacity: 0;
+    transform: scale(.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-o-keyframes show-bubble {
+  0%   {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes show-bubble {
+  0%   {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 /* Desktop Layout */
 
 @media only screen and (min-width: 768px) {
-    .table .row .col:before{
-       	display:none;
-    }
+  .table .row .col:before{
+		display:none;
+  }
 	.table .row, .flex-row {
 		-webkit-flex-wrap: nowrap;
 		-ms-flex-wrap: nowrap;
@@ -531,7 +740,7 @@ nav.main-nav {
 	}
 	.row.table-head {
 		display: -ms-flexbox;
-        display: -webkit-flex;
+    display: -webkit-flex;
 		display: flex;
 	}
 	.single-invoice-work.table .row .col:first-child{

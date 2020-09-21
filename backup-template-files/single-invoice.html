@@ -244,18 +244,74 @@
 		</div>
 
 	</div>
+
+	<div class="support-chat">
+		<div id="support-message" class="support-chat-message">
+			<div class="content-card flex-row">
+				<div class="support-chat-message-icon">
+					<figure>
+						<picture>
+							<source src="img/doggo.webp" type="image/webp">
+							<source src="img/doggo.jpg" type="image/jpg">
+							<img src="img/doggo.jpg" alt="doggo image" class="user-image-circle">
+						</picture>
+					</figure>
+				</div>
+				<div class="support-chat-message-text">
+					<p><span class="bold-text">Questions? Concerns?</span><br/>
+						Send us a message, we are here to help.</p>
+				</div>
+			</div>
+		</div>
+		<div id="close-message" class="btn white-btn close-support-message bold-text">close</div>
+		<div id="support-form" class="support-form">
+			<div class="content-card">
+				<h4>Enter your information and we'll get back to you shortly.</h4>
+				<form class="" action="index.html" method="post">
+
+					<div class="form-group">
+						<label for="name"></label>Name</label>
+						<input id="name" type="text" name="" value="" placeholder="Your Name" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input id="email" type="email" name="" value="" placeholder="Email Address" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="message">Message</label>
+						<textarea id="message" name="message" class="form-control" placeholder="Please discribe the issue you are having."></textarea>
+					</div>
+
+					<button type="submit" name="button" class="btn">Send</button>
+
+				</form>
+			</div>
+		</div>
+		<div id="open-support" class="support-chat-icon">
+			<picture>
+				<source src="img/message.webp" type="image/webp">
+				<source src="img/message.png" type="image/png">
+				<img src="img/message.png" alt="message image" class="message-image-circle">
+			</picture>
+		</div>
+	</div>
+
 	<script type="text/javascript">
 		// variables
 		const hamburger = document.getElementById('toggle-sidebar'),
 					sidebar = document.getElementById('sidebar'),
 					openDropDown = document.getElementById('open-drop-down'),
 					profileMenu = document.getElementById('profile-menu'),
-					submenu = document.getElementsByClassName('submenu-open');
+					submenu = document.getElementsByClassName('submenu-open'),
+					supportMessage = document.getElementById('support-message'),
+					closeMessage = document.getElementById('close-message'),
+					openSupportIcon = document.getElementById('open-support'),
+					supportForm = document.getElementById('support-form');
 
 		// change the class of the sidebar on click
-		hamburger.addEventListener( 'click', () => {
-			sidebar.classList.toggle('toggled');
-		});
+		hamburger.addEventListener( 'click', () => { sidebar.classList.toggle('toggled'); } );
 
 		// add a click event to the dom
 		document.addEventListener( 'click', (event) => {
@@ -266,9 +322,7 @@
 		});
 
 		// change the class of dropdown menu onclick
-		openDropDown.addEventListener( 'click', () => {
-			profileMenu.classList.toggle('open');
-		});
+		openDropDown.addEventListener( 'click', () => { profileMenu.classList.toggle('open') } );
 
 		// loop through the elements and add an on click even
 		for (let i = 0; i < submenu.length; i++) {
@@ -282,6 +336,61 @@
 			});
 
 		}
+
+		// toggle chat function
+		const toggleSupportChat = () => {
+			// toggle support chat
+			supportForm.classList.toggle('show');
+
+			//change to exit icon
+			openSupportIcon.classList.toggle('exit');
+
+			//clese the support message and add cookie
+			closeSupportMessage();
+		}
+
+		// hide support chat Message
+		const closeSupportMessage = () => {
+			//hide support Message
+			supportMessage.classList.add('hide');
+
+			//check if cookie is set for hidding supoort Message
+			if(getCookie('hideSupport')) {
+				// add cookie to hide support message next page load
+				setCookie('hideSupport', 1, 7);
+			}
+		}
+
+		function setCookie(name,value,days) {
+    	var expires = "";
+		    if (days) {
+		        var date = new Date();
+		        date.setTime(date.getTime() + (days*24*60*60*1000));
+		        expires = "; expires=" + date.toUTCString();
+		    }
+		    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+		}
+		function getCookie(name) {
+		    var nameEQ = name + "=";
+		    var ca = document.cookie.split(';');
+		    for(var i=0;i < ca.length;i++) {
+		        var c = ca[i];
+		        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		    }
+		    return null;
+		}
+		function eraseCookie(name) {
+		    document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+		}
+
+		// close support message
+		closeMessage.addEventListener('click', closeSupportMessage);
+
+		// toggle support chat
+		supportMessage.addEventListener('click', toggleSupportChat);
+		openSupportIcon.addEventListener('click', toggleSupportChat);
+
 	</script>
 
 </body>
