@@ -122,97 +122,141 @@
 
 			</nav>
 
-			<main class="main-content">
+			<main class="main-content my-account-page grid-display page-with-menu">
 
 				<header class="ssa-page-header page-header">
 					<h1>My Account</h1>
 				</header>
+				<div class="flex-row">
 
-				<section class="content-card">
-					<h2>Account info</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at sollicitudin eros.</p>
+					<nav class="page-menu my-account-menu">
+						<a href="#account-info">Account Info</a>
+						<a href="#company-info">Company Info</a>
+						<a href="#reset-password">Reset Password</a>
+					</nav>
 
-					<form class="" action="index.html" method="post">
+					<section id="account-info" class="content-card show active">
+						<h2>Account info</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at sollicitudin eros.</p>
 
-						<div class="form-group">
-							<label for="username">Username</label>
-							<input id="username" type="text" name="" value="" placeholder="Username" class="form-control">
-						</div>
+						<form class="" action="index.html" method="post">
 
-						<div class="form-group">
-							<label for="email">Email</label>
-							<input id="email" type="email" name="" value="" placeholder="Email Address" class="form-control">
-						</div>
+							<div class="form-group">
+								<label for="username">Username</label>
+								<input id="username" type="text" name="" value="" placeholder="Username" class="form-control">
+							</div>
 
-						<div class="form-group">
-							<label for="firstName">First Name</label>
-							<input id="firstName" type="text" name="" value="" placeholder="First Name" class="form-control">
-						</div>
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input id="email" type="email" name="" value="" placeholder="Email Address" class="form-control">
+							</div>
 
-						<div class="form-group">
-							<label for="lastName">Last Name</label>
-							<input id="lastName" type="text" name="" value=""placeholder="Last Name"  class="form-control">
-						</div>
+							<div class="form-group">
+								<label for="firstName">First Name</label>
+								<input id="firstName" type="text" name="" value="" placeholder="First Name" class="form-control">
+							</div>
 
-						<button type="submit" name="button" class="btn">Update</button>
+							<div class="form-group">
+								<label for="lastName">Last Name</label>
+								<input id="lastName" type="text" name="" value=""placeholder="Last Name"  class="form-control">
+							</div>
 
-					</form>
+							<button type="submit" name="button" class="btn">Update</button>
 
-				</section>
+						</form>
 
-				<section class="content-card">
-					<h2>Company info</h2>
+					</section>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at sollicitudin eros.</p>
+					<section id="company-info" class="content-card">
+						<h2>Company info</h2>
 
-					<form class="" action="index.html" method="post">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at sollicitudin eros.</p>
 
-						<div class="form-group">
-							<label for="businessName">Business Name</label>
-							<input id="businessName" type="text" name="" value="" placeholder="Business Name" class="form-control">
-						</div>
+						<form class="" action="index.html" method="post">
 
-						<div class="form-group">
-							<label for="address">Address</label>
-							<input id="address" type="text" name="" value="" placeholder="Address Line 1" class="form-control">
-							<input type="text" name="" value="" placeholder="Address Line 2" class="form-control">
-						</div>
+							<div class="form-group">
+								<label for="businessName">Business Name</label>
+								<input id="businessName" type="text" name="" value="" placeholder="Business Name" class="form-control">
+							</div>
 
-						<div class="form-group">
-							<label for="city">City</label>
-							<input id="city" type="text" name="" value="" placeholder="City" class="form-control">
-						</div>
+							<div class="form-group">
+								<label for="address">Address</label>
+								<input id="address" type="text" name="" value="" placeholder="Address Line 1" class="form-control">
+								<input type="text" name="" value="" placeholder="Address Line 2" class="form-control">
+							</div>
 
-						<div class="form-group">
-							<label for="province">Province</label>
-							<input id="province" type="text" name="" value="" placeholder="Province" class="form-control">
-						</div>
+							<div class="form-group">
+								<label for="city">City</label>
+								<input id="city" type="text" name="" value="" placeholder="City" class="form-control">
+							</div>
 
-						<div class="form-group">
-							<label for="postalCode">Postal Code</label>
-							<input id="postalCode" type="text" name="" value=""placeholder="Postal Code"  class="form-control">
-						</div>
+							<div class="form-group">
+								<label for="province">Province</label>
+								<input id="province" type="text" name="" value="" placeholder="Province" class="form-control">
+							</div>
 
-						<div class="form-group">
-							<label for="phone">Phone</label>
-							<input id="phone" type="tel" name="" value="" placeholder="Phone Number" class="form-control">
-						</div>
+							<div class="form-group">
+								<label for="postalCode">Postal Code</label>
+								<input id="postalCode" type="text" name="" value=""placeholder="Postal Code"  class="form-control">
+							</div>
 
-						<div class="form-group">
-							<label for="cell">Cell</label>
-							<input id="cell" type="text" name="" value="" placeholder="Cell Phone Number" class="form-control">
-						</div>
+							<div class="form-group">
+								<label for="phone">Phone</label>
+								<input id="phone" type="tel" name="" value="" placeholder="Phone Number" class="form-control">
+							</div>
 
-						<div class="form-group">
-							<label for="website">Website</label>
-							<input id="website" type="text" name="" value="" placeholder="Website" class="form-control">
-						</div>
+							<div class="form-group">
+								<label for="cell">Cell</label>
+								<input id="cell" type="text" name="" value="" placeholder="Cell Phone Number" class="form-control">
+							</div>
 
-						<button type="submit" name="button" class="btn">Update</button>
+							<div class="form-group">
+								<label for="website">Website</label>
+								<input id="website" type="text" name="" value="" placeholder="Website" class="form-control">
+							</div>
 
-					</form>
+							<button type="submit" name="button" class="btn">Update</button>
 
-				</section>
+						</form>
+
+					</section>
+
+					<section id="reset-password" class="content-card">
+						<h2>Reset Password</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at sollicitudin eros.</p>
+
+						<form class="" action="index.html" method="post">
+
+							<div class="form-group">
+								<label for="oldPassword">Current Password</label>
+								<input id="oldPassword" type="password" name="" value="" class="form-control">
+							</div>
+
+							<div class="form-group">
+								<label for="newPassword">New Password</label>
+								<input id="newPassword" type="password" name="" value="" class="form-control">
+								<span class="showBtn">SHOW</span>
+							</div>
+
+							<div class="indicator">
+								<span class="weak"></span>
+								<span class="medium"></span>
+								<span class="strong"></span>
+							</div>
+							<div class="text"></div>
+
+							<div class="form-group">
+								<label for="comfirmNewPassword">Confirm New Password</label>
+								<input id="comfirmNewPassword" type="password" name="" value="" class="form-control">
+							</div>
+
+							<button type="submit" name="button" class="btn">Update</button>
+
+						</form>
+
+					</section>
+
+				</div>
 
 			</main>
 
@@ -365,6 +409,71 @@
 		// toggle support chat
 		supportMessage.addEventListener('click', toggleSupportChat);
 		openSupportIcon.addEventListener('click', toggleSupportChat);
+
+	</script>
+
+	<script>
+		const indicator = document.querySelector(".indicator");
+		const input = document.querySelector("#newPassword");
+		const weak = document.querySelector(".weak");
+		const medium = document.querySelector(".medium");
+		const strong = document.querySelector(".strong");
+		const text = document.querySelector(".text");
+		const showBtn = document.querySelector(".showBtn");
+		let regExpWeak = /[a-z]/;
+		let regExpMedium = /\d+/;
+		let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
+		const trigger = () => {
+			if(input.value != ""){
+				indicator.style.display = "block";
+				indicator.style.display = "flex";
+				if(input.value.length <= 3 && (input.value.match(regExpWeak) || input.value.match(regExpMedium) || input.value.match(regExpStrong)))no=1;
+				if(input.value.length >= 6 && ((input.value.match(regExpWeak) && input.value.match(regExpMedium)) || (input.value.match(regExpMedium) && input.value.match(regExpStrong)) || (input.value.match(regExpWeak) && input.value.match(regExpStrong))))no=2;
+				if(input.value.length >= 6 && input.value.match(regExpWeak) && input.value.match(regExpMedium) && input.value.match(regExpStrong))no=3;
+				if(no==1){
+					weak.classList.add("active");
+					text.style.display = "block";
+					text.textContent = "Your password is too week";
+					text.classList.add("weak");
+				}
+				if(no==2){
+					medium.classList.add("active");
+					text.textContent = "Your password is medium";
+					text.classList.add("medium");
+				}else{
+					medium.classList.remove("active");
+					text.classList.remove("medium");
+				}
+				if(no==3){
+					weak.classList.add("active");
+					medium.classList.add("active");
+					strong.classList.add("active");
+					text.textContent = "Your password is strong";
+					text.classList.add("strong");
+				}else{
+					strong.classList.remove("active");
+					text.classList.remove("strong");
+				}
+				showBtn.style.display = "block";
+				showBtn.onclick = function(){
+					if(input.type == "password"){
+						input.type = "text";
+						showBtn.textContent = "HIDE";
+						showBtn.style.color = "#23ad5c";
+					}else{
+						input.type = "password";
+						showBtn.textContent = "SHOW";
+						showBtn.style.color = "#000";
+					}
+				}
+			}else{
+				indicator.style.display = "none";
+				text.style.display = "none";
+				showBtn.style.display = "none";
+			}
+		}
+
+		input.addEventListener('keyup', trigger);
 
 	</script>
 
