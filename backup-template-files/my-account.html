@@ -130,12 +130,13 @@
 				<div class="flex-row">
 
 					<nav class="page-menu my-account-menu">
-						<a href="#account-info">Account Info</a>
-						<a href="#company-info">Company Info</a>
-						<a href="#reset-password">Reset Password</a>
+						<a href="#account-info" class="page-menu-link">Account Info</a>
+						<a href="#company-info" class="page-menu-link">Company Info</a>
+						<a href="#reset-password" class="page-menu-link">Reset Password</a>
+						<a href="#support-pin" class="page-menu-link">Support Pin</a>
 					</nav>
 
-					<section id="account-info" class="content-card show active">
+					<section id="account-info" class="page-with-menu-content content-card show active">
 						<h2>Account info</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at sollicitudin eros.</p>
 
@@ -167,7 +168,7 @@
 
 					</section>
 
-					<section id="company-info" class="content-card">
+					<section id="company-info" class="page-with-menu-content content-card">
 						<h2>Company info</h2>
 
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at sollicitudin eros.</p>
@@ -221,7 +222,7 @@
 
 					</section>
 
-					<section id="reset-password" class="content-card">
+					<section id="reset-password" class="page-with-menu-content content-card">
 						<h2>Reset Password</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at sollicitudin eros.</p>
 
@@ -248,6 +249,56 @@
 							<div class="form-group">
 								<label for="comfirmNewPassword">Confirm New Password</label>
 								<input id="comfirmNewPassword" type="password" name="" value="" class="form-control">
+							</div>
+
+							<button type="submit" name="button" class="btn">Update</button>
+
+						</form>
+
+					</section>
+
+					<section id="support-pin" class="page-with-menu-content content-card">
+						<h2>Support Pin</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at sollicitudin eros.</p>
+
+						<form class="" action="index.html" method="post">
+
+							<div class="form-group">
+								<label for="supportPin">Support Pin or Phrase</label>
+								<input id="supportPin" type="text" name="" value="" placeholder="Enter your pin or phrase" class="form-control">
+							</div>
+
+							<div class="form-group">
+								<label for="hint">Pin or Phrase Hint</label>
+								<input id="hint" type="text" name="" value="" placeholder="Enter your hint" class="form-control">
+							</div>
+
+							<div class="form-group">
+								<label for="questionOne">Secrity Qustion 1</label>
+								<select id="questionOne" class="form-control" name="">
+									<option value="">--</option>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="answerOne">Answer</label>
+								<input id="answerOne" type="text" name="" value=""  class="form-control">
+							</div>
+
+							<div class="form-group">
+								<label for="questionTwo">Secrity Qustion 2</label>
+								<select id="questionTwo" class="form-control" name="">
+									<option value="">--</option>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="answerTwo">Answer</label>
+								<input id="answerTwo" type="text" name="" value=""  class="form-control">
 							</div>
 
 							<button type="submit" name="button" class="btn">Update</button>
@@ -474,6 +525,32 @@
 		}
 
 		input.addEventListener('keyup', trigger);
+
+		// get the varablies for thee page menu
+		const pageMenuLinks = document.getElementsByClassName("page-menu-link");
+		const pageMenuContainers = document.getElementsByClassName("page-with-menu-content");
+		const hideMenuContainers = () => {
+			for (let i = 0; i < pageMenuContainers.length; i++) {
+				// remove avtive and show classes
+				pageMenuContainers[i].classList.remove('active');
+				pageMenuContainers[i].classList.remove("show");
+			}
+		};
+
+		//loop through page menu elements add on clicked
+		for (let i = 0; i < pageMenuLinks.length; i++) {
+			// change the class of submenu on click
+			pageMenuLinks[i].addEventListener( 'click', (event) => {
+				event.preventDefault();
+				hideMenuContainers();
+				let targetElement = document.querySelector(event.target.hash);
+				targetElement.classList.add('active');
+				setTimeout(function(){
+					targetElement.classList.add('show');
+				}, 150);
+			});
+		}
+
 
 	</script>
 
