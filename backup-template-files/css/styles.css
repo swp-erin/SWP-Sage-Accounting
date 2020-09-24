@@ -242,6 +242,55 @@ form .text.medium{
 form .text.strong{
   color: #23ad5c;
 }
+input.custom-control-input {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 1rem;
+    height: 1.20312rem;
+    opacity: 0;
+}
+
+.custom-control-label {
+    position: relative;
+    z-index: 1;
+    display: block;
+    min-height: 1.40625rem;
+    padding-left: 1.5rem;
+}
+
+.custom-control-label:before {
+    pointer-events: none;
+    background-color: #dee2e6;
+    border: 1px solid #adb5bd;
+    border-radius: .2rem;
+}
+.custom-control-label:after {
+    background: no-repeat 50%/50% 50%;
+}
+.custom-control-label:before, .custom-control-label {
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.custom-control-label:after, .custom-control-label:before {
+    position: absolute;
+    top: .20312rem;
+    left: 0;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    content: "";
+}
+
+.custom-control-input:checked~.custom-control-label:before {
+    color: #fff;
+    border-color: var(--dark-blue);
+    background-color: var(--dark-blue);
+}
+
+.custom-control-input:checked~.custom-control-label:after {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3E%3C/svg%3E");
+}
 
 
 /* Content Style */
@@ -867,8 +916,12 @@ nav.page-menu.my-account-menu {
 	.single-invoice-work.table .row .col:first-child{
 		width:100%
 	}
+	.all-invoices.table .row .col:first-child{
+		width: 40px;
+		text-align: center;
+	}
 	.all-invoices.table .row .col:last-child{
-		width: 160px;
+		width: 162px;
 	}
 	.table .row .col{
 		width:33.33%;
